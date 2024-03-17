@@ -7,14 +7,15 @@ def home():
     return render_template("add.html")
 
 
-@app.route("/add")
+@app.route("/add", methods = ["post"])
 def adder():
-    a = request.args.get("a", "")
-    b = request.args.get("b", "")
+    a = request.form.get("a", "")
+    b = request.form.get("b", "")
     a = int(a)
     b = int(b)
+    result = a+b
 
-    return f"sum : {a+b}"   
+    return render_template("result.html", result=result)
 if __name__ == "__main__":
     app.run(port=4200, debug= True)
 
