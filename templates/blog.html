@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>salom</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsum nam sequi libero! Dolor, incidunt? Expedita tempora repellat harum repudiandae quae reiciendis accusamus cupiditate nam! Quidem minima dolor dolores molestias.
+    </p>
+    <br>
+    {% for slug, article in articles.items()%}
+    <a href="/blog/{{slug}}">{{article}}</a>
+    {% endfor %}
+
+
+    <a href="add.html">misol</a>
+</body>
+</html>

@@ -1,21 +1,21 @@
-from flask import Flask, request, render_template
+import os
+from slugify import slugify
+from flask import Flask , render_template
+from articles import Article
 
 app = Flask(__name__)
 
+articles = Article.all()
+
 @app.route("/")
-def home():
-    return render_template("add.html")
+def blog():
+		
+    return render_template("blog.html", articles=articles)
 
+@app.route("/blog/")
+def article(slug: str):
+    article = articles[slug]
+    return render_template("article.html", article=article)
 
-@app.route("/add", methods = ["post"])
-def adder():
-    a = request.form.get("a", "")
-    b = request.form.get("b", "")
-    a = int(a)
-    b = int(b)
-    result = a+b
-
-    return render_template("result.html", result=result)
 if __name__ == "__main__":
-    app.run(port=4200, debug= True)
-
+    app.run(port=4200, debug=True)
