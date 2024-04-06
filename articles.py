@@ -15,7 +15,7 @@ class Article:
             self.content = file.read()
 
     @classmethod
-    def all():
+    def all(cls):
         titles = os.listdir("articles")
         slug_articles = {}
         for title in titles:

@@ -3,19 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog</title>
 </head>
 <body>
-    <h1>salom</h1>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ipsum nam sequi libero! Dolor, incidunt? Expedita tempora repellat harum repudiandae quae reiciendis accusamus cupiditate nam! Quidem minima dolor dolores molestias.
-    </p>
-    <br>
-    {% for slug, article in articles.items()%}
-    <a href="/blog/{{slug}}">{{article}}</a>
-    {% endfor %}
-
-
-    <a href="add.html">misol</a>
+    <h1>Welcome to the Blog</h1>
+    <ul>
+        {% for slug, article in articles.items() %}
+            <li><a href="/blog/{{ slug }}">{{ article.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="add.html">Add Article</a>
 </body>
 </html>
