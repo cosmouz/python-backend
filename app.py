@@ -1,4 +1,4 @@
-from Flask import Flask , render_template, request, session, make_response
+from flask import Flask , render_template, request, session, make_response
 from articles import Article
 import hashlib
 
